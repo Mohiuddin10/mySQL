@@ -1,0 +1,20 @@
+to create a table ==>
+            CREATE TABLE teachers (
+            id INTEGER, 
+            NAME TEXT, 
+            age INTEGER
+            );
+
+
+to insert a value/row in table ==>
+
+        INSERT INTO teachers (id, age, NAME) VALUES (12, 35, "Sujon");
+
+
+not to get any duplicate items ==> 
+        SELECT DISTINCT NAME FROM teachers;
+
+WHERE clause filters the result set to only include rows where the following condition is true.
+                SELECT *
+                FROM movies
+                WHERE imdb_rating > 8;
