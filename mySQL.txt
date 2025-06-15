@@ -18,3 +18,82 @@ WHERE clause filters the result set to only include rows where the following con
                 SELECT *
                 FROM movies
                 WHERE imdb_rating > 8;
+
+
+LIKE can be a useful operator when you want to compare similar values.
+                SELECT * 
+                FROM movies
+                WHERE name LIKE 'Se_en';
+
+
+to get only start or end with letter ==>
+                SELECT * 
+                FROM movies
+                WHERE name LIKE 'A%';
+
+                 SELECT * 
+                FROM movies
+                WHERE name LIKE '%A';
+
+                 SELECT * 
+                FROM movies
+                WHERE name LIKE 'The %';
+
+to get any value of colume is null or not null ==>
+
+                SELECT name
+                FROM movies 
+                WHERE imdb_rating IS NOT NULL;
+                
+
+                SELECT name
+                FROM movies 
+                WHERE imdb_rating IS NULL;
+
+
+get any value between ==>
+
+                SELECT *
+                FROM movies
+                WHERE year BETWEEN 1990 AND 1999;
+
+                SELECT *
+                FROM movies
+                WHERE name BETWEEN 'A' AND 'C';
+                ==> return values only name starts with A & B.
+
+
+And operator 
+
+                SELECT * 
+                FROM movies
+                WHERE year BETWEEN 1990 AND 1999
+                AND genre = 'romance';
+
+                SELECT * 
+                FROM movies
+                WHERE year < 1985
+                AND genre = 'horror';
+
+OR operator
+                SELECT *
+                FROM movies
+                WHERE year > 2014
+                OR genre = 'action';
+
+
+                SELECT *
+                FROM movies
+                WHERE genre = 'romance'
+                OR genre = 'comedy';
+Order by ==> 
+
+                SELECT name, year
+                FROM movies
+                ORDER BY name;
+
+                SELECT name, year
+                FROM movies
+                ORDER BY name;
+
+                
