@@ -92,8 +92,71 @@ Order by ==>
                 FROM movies
                 ORDER BY name;
 
-                SELECT name, year
+                SELECT name, year, imdb_rating
                 FROM movies
-                ORDER BY name;
+                ORDER BY imdb_rating desc;
 
-                
+                SELECT name, year, imdb_rating
+                FROM movies
+                ORDER BY imdb_rating asc;
+
+Limit ===>
+
+                SELECT *
+                FROM movies
+                order by imdb_rating desc
+                LIMIT 3;
+
+Case ==>
+
+                SELECT name,
+                CASE
+                WHEN genre = 'romance' THEN 'Chill'
+                WHEN genre = 'comedy' THEN 'Chill'
+                ELSE 'Intense'
+                END AS 'Mood'
+                FROM movies;
+
+                SELECT name,
+                CASE
+                WHEN imdb_rating > 8 THEN 'Fantastic'
+                WHEN imdb_rating > 6 THEN 'Poorly Received'
+                ELSE 'Avoid at All Costs'
+                END AS 'Review'
+                FROM movies;
+Calculations =====>
+
+to count ===>
+
+                select count(*) from fake_apps where price = 0;
+
+ Sum ===>
+
+                SELECT SUM(downloads)
+                FROM fake_apps;               
+MAX MIN ===>
+
+                SELECT MAX(downloads)
+                FROM fake_apps;
+Avg ===> 
+
+                SELECT AVG(price)
+                FROM fake_apps;
+
+round ====>
+                SELECT name, ROUND(price, 0)
+                FROM fake_apps;
+
+                select round(avg(price), 2) from fake_apps;
+
+Group by ===>
+
+                SELECT category, SUM(downloads)
+                FROM fake_apps
+                group by category;
+
+                SELECT year,
+                AVG(imdb_rating)
+                FROM movies
+                GROUP BY year
+                ORDER BY year;
