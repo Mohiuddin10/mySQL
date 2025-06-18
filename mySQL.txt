@@ -160,3 +160,6 @@ Group by ===>
                 FROM movies
                 GROUP BY year
                 ORDER BY year;
+
+
+Work With Multiple table 
