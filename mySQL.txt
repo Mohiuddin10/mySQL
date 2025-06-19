@@ -163,3 +163,57 @@ Group by ===>
 
 
 Work With Multiple table 
+
+Combining Tables with SQL
+13 min
+Combining tables manually is time-consuming. Luckily, SQL gives us an easy sequence for this: it’s called a 
+Preview: Docs The JOIN clause allows for the return of results from more than one table by joining them together with other results based on common column values specified using an ON clause.
+JOIN
+.
+
+If we want to combine orders and customers, we would type:
+
+SELECT *
+FROM orders
+JOIN customers
+  ON orders.customer_id = customers.customer_id;
+
+Copy to Clipboard
+
+Let’s break down this command:
+
+The first line selects all columns from our combined table. If we only want to select certain columns, we can specify which ones we want.
+The second line specifies the first table that we want to look in, orders
+The third line uses JOIN to say that we want to combine information from orders with customers.
+The fourth line tells us how to combine the two tables. We want to match orders table’s customer_id column with customers table’s customer_id column.
+Because column names are often repeated across multiple tables, we use the syntax table_name.column_name to be sure that our requests for columns are unambiguous. In our example, we use this syntax in the ON statement, but we will also use it in the 
+Preview: Docs Loading link description
+SELECT
+ or any other statement where we refer to column names.
+
+For example: Instead of selecting all the columns using *, if we only wanted to select orders table’s order_id column and customers table’s customer_name column, we could use the following query:
+
+SELECT orders.order_id,
+   customers.customer_name
+FROM orders
+JOIN customers
+  ON orders.customer_id = customers.customer_id;
+
+Copy to Clipboard
+
+Instructions
+Checkpoint 1 Failed, try again
+1.
+Join orders table and subscriptions table and select all columns.
+
+Make sure to join on the subscription_id column.
+
+Checkpoint 2 Step instruction is unavailable until previous steps are completed
+2.
+Don’t remove the previous query.
+
+Add a second query after your first one that only selects rows from the join where description is equal to ‘Fashion Magazine’.
+
+
+====>
+select * from orders join subscriptions on orders.subscription_id = subscriptions.subscription_id;
