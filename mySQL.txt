@@ -217,3 +217,13 @@ Add a second query after your first one that only selects rows from the join whe
 
 ====>
 select * from orders join subscriptions on orders.subscription_id = subscriptions.subscription_id;
+
+
+left join ===>
+select * from newspaper left join online on newspaper.id = online.id;
+select * from newspaper left join online on newspaper.id = online.id where online.id is null;
+
+inner join ===>
+select count() from newspaper;
+select count() from online;
+select count() from newspaper join online on newspaper.id = online.id;
